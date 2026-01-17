@@ -8,7 +8,7 @@ import ItemList from "./ItemList";
 
 function App() {
   const [items, setItems] = useState([]);
-  // 🔹 SIUNČIAM Į DB.JSON
+
   const sentData = async (item, quantity) => {
     try {
       const response = await fetch("http://localhost:3000/items", {
@@ -63,12 +63,24 @@ function App() {
     getData();
   }, []);
 
-  const toggleItem = (id) => {
-    setItems((items) =>
-      items.map((item) =>
-        item.id === id ? { ...item, packed: !item.packed } : item
-      )
-    );
+  const toggleItem = async (id) => {
+    const currentItem = items.find((item) => item.id === id);
+
+    try {
+      await fetch(`http://localhost:3000/items/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          packed: !currentItem.packed,
+        }),
+      });
+
+      getData(); 
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const totalItems = items.length;
