@@ -78,14 +78,22 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Form onSendData={sentData} />
-      <ItemList
-        items={items}
-        onToggleItem={toggleItem}
-        onDeleteData={deleteData}
-      />
-      <Stats total={totalItems} packed={packedItems} percentage={percentage} />
+      <div className="flex flex-col h-screen">
+        <Header />
+        <Form onSendData={sentData} />
+        <main className="flex-1 overflow-y-auto bg-[#5a3e2b]">
+          <ItemList
+            items={items}
+            onToggleItem={toggleItem}
+            onDeleteData={deleteData}
+          />
+        </main>
+        <Stats
+          total={totalItems}
+          packed={packedItems}
+          percentage={percentage}
+        />
+      </div>{" "}
     </>
   );
 }

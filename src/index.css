@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Užregistruojame šriftą Tailwind v4 temoje */
+  --font-retro: "Monoton", system-ui;
+}
