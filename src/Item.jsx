@@ -1,4 +1,4 @@
-function Item({ item, onToggleItem }) {
+function Item({ item, onToggleItem, onDeleteData }) {
   return (
     <>
       <input
@@ -8,7 +8,8 @@ function Item({ item, onToggleItem }) {
       />
 
       <span className={item.packed ? "line-through" : ""}>
-        {item.quantity} {item.item}
+        {item.quantity} {item.item}{" "}
+        <button onClick={() => onDeleteData(item.id)}>X</button>
       </span>
     </>
   );

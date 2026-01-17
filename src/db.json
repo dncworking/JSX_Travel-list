@@ -1,40 +1,10 @@
 {
-    "items": [
-        {
-            "id": "610b",
-            "item": "gugukada",
-            "quantity": 1,
-            "packed": false
-        },
-        {
-            "id": "8bc0",
-            "item": "zdczdfe",
-            "quantity": "4",
-            "packed": false
-        },
-        {
-            "id": "a1f1",
-            "item": "gugkaka",
-            "quantity": "",
-            "packed": false
-        },
-        {
-            "id": "71c9",
-            "item": "gugu baba",
-            "quantity": "10",
-            "packed": false
-        },
-        {
-            "id": "03e8",
-            "item": "kaka",
-            "quantity": "15",
-            "packed": false
-        },
-        {
-            "id": "daf7",
-            "item": "fdffd",
-            "quantity": "7",
-            "packed": false
-        }
-    ]
+  "items": [
+    {
+      "id": "dec3",
+      "item": "gugu kada",
+      "quantity": "4",
+      "packed": false
+    }
+  ]
 }

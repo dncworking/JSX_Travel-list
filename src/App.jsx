@@ -39,6 +39,26 @@ function App() {
     }
   };
 
+  const deleteData = async (id) => {
+    try {
+      const requestOptions = {
+        method: "DELETE",
+      };
+      const response = await fetch(
+        `http://localhost:3000/items/${id}`,
+        requestOptions
+      );
+      setItems((items) => items.filter((item) => item.id !== id));
+      if (response.ok) {
+        getData();
+      } else {
+        throw new Error("Error");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   useEffect(() => {
     getData();
   }, []);
@@ -60,7 +80,11 @@ function App() {
     <>
       <Header />
       <Form onSendData={sentData} />
-      <ItemList items={items} onToggleItem={toggleItem} />
+      <ItemList
+        items={items}
+        onToggleItem={toggleItem}
+        onDeleteData={deleteData}
+      />
       <Stats total={totalItems} packed={packedItems} percentage={percentage} />
     </>
   );
